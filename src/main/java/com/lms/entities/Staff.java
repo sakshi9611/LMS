@@ -34,21 +34,18 @@ public class Staff {
 	@Column(name = "staffId")
 	private long staffId;
 
-	@Column(name = "name")
-	private String name;
+	@Column(name="designation")
+	private String designation;
+	
+	@Column(name="salary")
+	private long salary;
 
-	@Column(name = "email")
-	private String email;
-
-	@Column(name = "phoneNo")
-	private long phoneNo;
-
-	@Column(name = "roleID")
-	private long role_id;
+	@Column(name = "memberId")
+	private long memberId;
 
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinColumn(name = "roleId", insertable = false, updatable = false)
-	private Role role;
+	@JoinColumn(name = "memberId", insertable = false, updatable = false)
+	private Members members;
 
 	@CreationTimestamp
 	@Column(name = "timeStamp")
